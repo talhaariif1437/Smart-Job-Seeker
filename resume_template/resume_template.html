@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{name}} | {{role}} | {{email}}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+    <link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+</head>
+<body>
+<div id="doc2" class="yui-t7">
+    <div id="inner">
+        <div id="hd">
+            <div class="yui-gc">
+                <div class="yui-u first">
+                    <h1>{{name}}</h1>
+                    <h2>{{role}}</h2>
+                </div>
+                <div class="yui-u">
+                    <div class="contact-info">
+                        <h3><a href="mailto:{{email}}">{{email}}</a></h3>
+                        <h3>{{phone}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                    <div class="yui-gf">
+                        <div class="yui-u first">
+                            <h2>Profile</h2>
+                        </div>
+                        <div class="yui-u">
+                            <p class="enlarge">{{profile}}</p>
+                        </div>
+                    </div>
+                    <div class="yui-gf">
+                        <div class="yui-u first">
+                            <h2>Skills</h2>
+                        </div>
+                        <div class="yui-u">
+                            <div class="talent"><h2>{{skill1_title}}</h2><p>{{skill1_desc}}</p></div>
+                            <div class="talent"><h2>{{skill2_title}}</h2><p>{{skill2_desc}}</p></div>
+                            <div class="talent"><h2>{{skill3_title}}</h2><p>{{skill3_desc}}</p></div>
+                        </div>
+                    </div>
+                    <div class="yui-gf">
+                        <div class="yui-u first">
+                            <h2>Experience</h2>
+                        </div>
+                        <div class="yui-u">
+                            <div class="job"><h2>{{exp1_company}}</h2><h3>{{exp1_role}}</h3><h4>{{exp1_duration}}</h4><p>{{exp1_desc}}</p></div>
+                            <div class="job"><h2>{{exp2_company}}</h2><h3>{{exp2_role}}</h3><h4>{{exp2_duration}}</h4><p>{{exp2_desc}}</p></div>
+                            <div class="job"><h2>{{exp3_company}}</h2><h3>{{exp3_role}}</h3><h4>{{exp3_duration}}</h4><p>{{exp3_desc}}</p></div>
+                        </div>
+                    </div>
+                    <div class="yui-gf last">
+                        <div class="yui-u first">
+                            <h2>Education</h2>
+                        </div>
+                        <div class="yui-u">
+                            <h2>{{education}}</h2>
+                            <h3>{{education_details}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ft">
+            <p>{{name}} &mdash; <a href="mailto:{{email}}">{{email}}</a> &mdash; {{phone}}</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
