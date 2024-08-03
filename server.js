@@ -26,7 +26,7 @@
 const app = require('./app');
 
 // Set the port to an environment variable or default to 3000
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 7000;
 
 // Start the server
 app.listen(PORT, () => {

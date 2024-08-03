@@ -99,6 +99,11 @@ const cors = require("cors");
 
 const app = express();
 
+
+console.log('DB_URL:', process.env.DB_URL);
+console.log('PORT:', process.env.PORT);
+console.log('JWT_SECRET:', process.env.JWT_SECRET);
+
 // Database URL
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/exampledb";
 
@@ -141,7 +146,7 @@ app.use((req, res, next) => {
 
 // Test Route
 app.get('/', (req, res) => {
-  res.json("Hello");
+  res.json("Hello Talha");
 });
 
 // Required Routes
