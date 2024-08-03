@@ -144,7 +144,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Test Route
 
 // Required Routes
 const auth = require("./src/auth/auth.controller");
@@ -158,10 +157,11 @@ app.use("/api/user", user);
 app.use("/api/organization", organization);
 app.use("/api/job", job);
 
+
+// Test Route
 app.get('/', (req, res) => {
   res.json("Hello Talha");
 });
-
 
 // Error handling middleware
 app.use((error, req, res, next) => {
