@@ -154,10 +154,7 @@ app.use("/api/organization", organization);
 app.use("/api/job", job);
 
 
-// Test Route
-app.get('/', (req, res) => {
-  res.json("Hello Talha");
-});
+
 // Error handling middleware
 app.use((error, req, res, next) => {
   res.status(error.status || 500).json({
@@ -185,4 +182,8 @@ app.use((error, req, res, next) => {
   });
 });
 
+// Test Route
+app.get('/', (req, res) => {
+  res.json("Hello Talha");
+});
 module.exports = app;
