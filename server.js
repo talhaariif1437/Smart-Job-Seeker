@@ -22,29 +22,13 @@
 //   server.listen(port);
 
 
-
-const http = require('http');
-const https = require('https');
+// server.js
 const app = require('./app');
-const fs = require('fs');
-const path = require('path');
 
-const port = process.env.PORT || 7001;
+// Set the port to an environment variable or default to 3000
+const PORT = process.env.PORT || 3000;
 
-let server;
-
-// Check for the presence of SSL certificates
-if (process.env.MODE !== "DEV" && process.env.SSL_KEY && process.env.SSL_CRT) {
-    const options = {
-        key: fs.readFileSync(process.env.SSL_KEY),
-        cert: fs.readFileSync(process.env.SSL_CRT),
-    };
-
-    server = https.createServer(options, app);
-    console.log("HTTPS server running on port", port);
-} else {
-    server = http.createServer(app);
-    console.log("HTTP server running on port", port);
-}
-
-server.listen(port);
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
