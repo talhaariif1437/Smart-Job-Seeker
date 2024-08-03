@@ -99,11 +99,6 @@ const cors = require("cors");
 
 const app = express();
 
-
-console.log('DB_URL:', process.env.DB_URL);
-console.log('PORT:', process.env.PORT);
-console.log('JWT_SECRET:', process.env.JWT_SECRET);
-
 // Database URL
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/exampledb";
 
@@ -145,6 +140,7 @@ app.use((req, res, next) => {
 });
 
 
+
 // Required Routes
 const auth = require("./src/auth/auth.controller");
 const user = require("./src/user/user.controller");
@@ -162,7 +158,6 @@ app.use("/api/job", job);
 app.get('/', (req, res) => {
   res.json("Hello Talha");
 });
-
 // Error handling middleware
 app.use((error, req, res, next) => {
   res.status(error.status || 500).json({
