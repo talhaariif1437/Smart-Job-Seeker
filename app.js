@@ -139,7 +139,10 @@ app.use((req, res, next) => {
   next();
 });
 
-
+// Test Route
+app.get('/', (req, res) => {
+  res.json("Hello Talha");
+});
 
 // Required Routes
 const auth = require("./src/auth/auth.controller");
@@ -148,7 +151,7 @@ const job = require("./src/job/job.controller");
 const organization = require("./src/organization/organization.controller");
 
 // Routes which should handle requests
-app.use("/api/auth", auth);
+app.get("/api/auth", auth);
 app.use("/api/user", user);
 app.use("/api/organization", organization);
 app.use("/api/job", job);
@@ -182,8 +185,5 @@ app.use((error, req, res, next) => {
   });
 });
 
-// Test Route
-app.get('/', (req, res) => {
-  res.json("Hello Talha");
-});
+
 module.exports = app;
