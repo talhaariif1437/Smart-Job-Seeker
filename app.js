@@ -58,10 +58,21 @@ const organization = require("./src/organization/organization.controller");
   // app.use("/",applyJob);
 
 
+///Temporary
+  app.use((error, req, res, next) => {
+    res.status(error.status || 500).json({
+        error: {
+            message: error.message,
+            status: error.status,
+            stack: error.stack // This is useful for debugging but should be removed in production
+        }
+    });
+});
+
 
 // Default Route When nothing matches
 app.use((req, res, next) => {
-    const error = new Error("Not found :o 1:o:1 ");
+    const error = new Error("Not found :o :o");
     error.status = 404;
     next(error);
   });
