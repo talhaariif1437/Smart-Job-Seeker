@@ -151,7 +151,7 @@ const job = require("./src/job/job.controller");
 const organization = require("./src/organization/organization.controller");
 
 // Routes which should handle requests
-app.get("/api/auth", auth);
+app.use("/api/auth", auth);
 app.use("/api/user", user);
 app.use("/api/organization", organization);
 app.use("/api/job", job);
