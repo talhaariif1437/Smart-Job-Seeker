@@ -16,6 +16,9 @@ mongoose.connect(process.env.DB_URL ).then((val) =>{
 })
 mongoose.Promise = global.Promise;
 
+app.get('/', (req, res) =>{
+  res.json("Hello")
+})
 
 // Middlewares
 app.use((req, res, next) => {
@@ -58,7 +61,7 @@ const organization = require("./src/organization/organization.controller");
 
 // Default Route When nothing matches
 app.use((req, res, next) => {
-    const error = new Error("Not found :o :o");
+    const error = new Error("Not found :o 1:o:1 ");
     error.status = 404;
     next(error);
   });
