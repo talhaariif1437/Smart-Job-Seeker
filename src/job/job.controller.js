@@ -152,6 +152,22 @@ router.get('/jobsList',jwt, async (req, res) => {
         return res.status(500).json({ message: "Internal Server Error", error });
     }
 });
+//Paginated Job List for landing page
+router.get('/jobList', async (req, res) => {
+    try{
+        const request = req.query;
+        let result = await JobService.list(request.pageNo, request.searchValue,request.startDate,request.endDate);  
+
+        return sendSuccessResponse(res, "Request Successful", result);
+
+    }
+    catch (error) {
+        console.error("Error fetching jobs:", error);
+        return res.status(500).json({ message: "Internal Server Error", error });
+    }
+});
+
+
 
 
 // 1 Job Item This is showing Details of a job
