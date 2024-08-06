@@ -198,25 +198,25 @@ router.get("/usersList",async(req,res)=>{
 
 //List of users with Time Exchange
 
-// router.get("/timeExchangeUsers",async(req, res, next)=>{
-// try{
-//   let users = await User.find({
-//     $or: [
-//       { timeExchangeDescription: { $ne: null, $ne: "" } },
-//       { availableFrom: { $ne: null, $ne: "" } },
-//       { availableTill: { $ne: null, $ne: "" } }
-//     ]
-//   });
-//     if( !users ||users.length ==0){
-//     return res.status(404).send({ message: "Users not found" });
-//   }
-//   res.status(200).send({ message:"Users are",users });
-// }
-// catch(error){
-//   console.log(error);
-//   res.status(500).send({ message: "Internals erver error" });
-// }
-// })
+router.get("/timeExchangeUsers",async(req, res, next)=>{
+try{
+  let users = await User.find({
+    $or: [
+      { timeExchangeDescription: { $ne: null, $ne: "" } },
+      { availableFrom: { $ne: null, $ne: "" } },
+      { availableTill: { $ne: null, $ne: "" } }
+    ]
+  });
+    if( !users ||users.length ==0){
+    return res.status(404).send({ message: "Users not found" });
+  }
+  res.status(200).send({ message:"Users are",users });
+}
+catch(error){
+  console.log(error);
+  res.status(500).send({ message: "Internals erver error" });
+}
+})
 
 router.get('/timeExchangeUsers',async (req, res) => {
   try{
