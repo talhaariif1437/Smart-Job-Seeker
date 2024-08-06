@@ -160,7 +160,6 @@ exports.timeExchangeUsers = async (
   let pg = GeneralHelper.getPaginationDetails(pageNo);
   // console.log("user Role:", userRole);
   let condition = [
-    {role: '2'},
     { timeExchangeDescription: { $ne: null, $ne: "" } },
     { availableFrom: { $ne: null, $ne: "" } },
     { availableTill: { $ne: null, $ne: "" } }
